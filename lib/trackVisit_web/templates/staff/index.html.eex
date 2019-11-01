@@ -1,0 +1,56 @@
+<h1>Listing Staffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Security</th>
+      <th>City state residence</th>
+      <th>Country residence</th>
+      <th>City state origin</th>
+      <th>Country origin</th>
+      <th>Residence address</th>
+      <th>Next kin name</th>
+      <th>Next phone</th>
+      <th>Relationship</th>
+      <th>User?</th>
+      <th>Active?</th>
+      <th>Deactivated by</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for staff <- @staffs do %>
+    <tr>
+      <td><%= staff.first_name %></td>
+      <td><%= staff.last_name %></td>
+      <td><%= staff.phone %></td>
+      <td><%= staff.email %></td>
+      <td><%= staff.security_id %></td>
+      <td><%= staff.city_state_residence %></td>
+      <td><%= staff.country_residence %></td>
+      <td><%= staff.city_state_origin %></td>
+      <td><%= staff.country_origin %></td>
+      <td><%= staff.residence_address %></td>
+      <td><%= staff.next_kin_name %></td>
+      <td><%= staff.next_phone %></td>
+      <td><%= staff.relationship %></td>
+      <td><%= staff.user? %></td>
+      <td><%= staff.active? %></td>
+      <td><%= staff.deactivated_by %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.staff_path(@conn, :show, staff) %></span>
+        <span><%= link "Edit", to: Routes.staff_path(@conn, :edit, staff) %></span>
+        <span><%= link "Delete", to: Routes.staff_path(@conn, :delete, staff), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Staff", to: Routes.staff_path(@conn, :new) %></span>

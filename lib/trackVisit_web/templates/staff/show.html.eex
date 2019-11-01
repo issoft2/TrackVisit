@@ -1,0 +1,88 @@
+<h1>Show Staff</h1>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @staff.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @staff.last_name %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @staff.phone %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @staff.email %>
+  </li>
+
+  <li>
+    <strong>Security:</strong>
+    <%= @staff.security_id %>
+  </li>
+
+  <li>
+    <strong>City state residence:</strong>
+    <%= @staff.city_state_residence %>
+  </li>
+
+  <li>
+    <strong>Country residence:</strong>
+    <%= @staff.country_residence %>
+  </li>
+
+  <li>
+    <strong>City state origin:</strong>
+    <%= @staff.city_state_origin %>
+  </li>
+
+  <li>
+    <strong>Country origin:</strong>
+    <%= @staff.country_origin %>
+  </li>
+
+  <li>
+    <strong>Residence address:</strong>
+    <%= @staff.residence_address %>
+  </li>
+
+  <li>
+    <strong>Next kin name:</strong>
+    <%= @staff.next_kin_name %>
+  </li>
+
+  <li>
+    <strong>Next phone:</strong>
+    <%= @staff.next_phone %>
+  </li>
+
+  <li>
+    <strong>Relationship:</strong>
+    <%= @staff.relationship %>
+  </li>
+
+  <li>
+    <strong>User?:</strong>
+    <%= @staff.user? %>
+  </li>
+
+  <li>
+    <strong>Active?:</strong>
+    <%= @staff.active? %>
+  </li>
+
+  <li>
+    <strong>Deactivated by:</strong>
+    <%= @staff.deactivated_by %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.staff_path(@conn, :edit, @staff) %></span>
+<span><%= link "Back", to: Routes.staff_path(@conn, :index) %></span>

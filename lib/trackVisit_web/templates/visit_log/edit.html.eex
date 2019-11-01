@@ -1,0 +1,5 @@
+<h1>Edit Visit log</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.visit_log_path(@conn, :update, @visit_log)) %>
+
+<span><%= link "Back", to: Routes.visit_log_path(@conn, :index) %></span>

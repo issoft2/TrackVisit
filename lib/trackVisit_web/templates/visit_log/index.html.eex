@@ -1,0 +1,38 @@
+<h1>Listing Visitlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Check in time</th>
+      <th>Check out time</th>
+      <th>Visit reason</th>
+      <th>Visitor pix</th>
+      <th>Bage</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visit_log <- @visitlogs do %>
+    <tr>
+      <td><%= visit_log.start_time %></td>
+      <td><%= visit_log.end_time %></td>
+      <td><%= visit_log.check_in_time %></td>
+      <td><%= visit_log.check_out_time %></td>
+      <td><%= visit_log.visit_reason %></td>
+      <td><%= visit_log.visitor_pix %></td>
+      <td><%= visit_log.bage %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.visit_log_path(@conn, :show, visit_log) %></span>
+        <span><%= link "Edit", to: Routes.visit_log_path(@conn, :edit, visit_log) %></span>
+        <span><%= link "Delete", to: Routes.visit_log_path(@conn, :delete, visit_log), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visit log", to: Routes.visit_log_path(@conn, :new) %></span>

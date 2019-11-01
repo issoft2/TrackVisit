@@ -1,0 +1,104 @@
+    <%= form_for @changeset, @action, fn f -> %>
+      <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+   <h4 class="card-title">New Visitor</h4>
+
+      <div class="input-field col s12">
+      <%= select f, :title, @titles, multiple: "multiple", class: "materialize-select" %>
+      <label for="visitor_title">Title</label>
+      <%= error_tag f, :title %>
+      </div>
+
+ <div class="input-field col s12">
+      <%= text_input f, :first_name, class: "materialize-input" %>
+      <label for="visitor_first_name">First Name </label>
+      <%= error_tag f, :first_name %>
+    </div>
+
+
+    <div class="input-field col s12">
+      <%= text_input f, :last_name, class: "materialize-input" %>
+      <label for="visitor_last_name">Last Name </label>
+      <%= error_tag f, :last_name %>
+    </div>
+
+
+<div class="input-field col s12" class="materialize-select">
+    <select name="visitor[sex]" id="visitor_sex">
+      <option value="" disabled selected></option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <label for="visitor_sex">Gender</label>
+  </div>
+      
+
+      <div class="input-field col s12">
+          <input id="icon_telephone" type="tel" class= "materialize-input" name="visitor[phone]">
+          <label for="icon_telephone">Telephone</label>
+           <%= error_tag f, :phone %>
+        </div>
+      
+
+      <div class="input-field col s12">
+      <%= text_input f, :email, class: "materialize-input", id: "visitor_email" %>
+      <label for="visitor_email">Email Address</div>
+      <%= error_tag f, :email %>
+      </div>
+      
+
+      <div class="input-field col s12">
+        <%= textarea f, :address, class: "materialize-textarea", id: "address" %>
+        <label for="address">Address</label>
+        <%= error_tag f, :address %>
+      </div>
+
+      <div class="input-field col s12">
+      <%= text_input f, :uid, class: "materialize-input" , id: "uid" %>
+      <label for="uid">UID[Unique Identity Number]</label>
+        <%= error_tag f, :uid %>
+      </div>
+
+    <div class="input-field col s12" >
+    <select name="visitor[uid_type]" id="visitor_uid_type" class="materialize-select">
+      <option value="" disabled selected></option>
+      <option value="NIMC">National Identity Card</option>
+      <option value="IPP">International Passport</option>
+      <option value="VC">Voters Card</option>
+    </select>
+    <label for="visitor_uid_type">UID Type</label>
+  </div>
+      
+     <div class="input-field col s12">
+      <select name="visitor[badge]" id="visitor_badge" class="materialize-select" data-placeholder="Select Visitor Badge">
+      <option value="" disabled selected></option>
+      <option value="Regular">Regular</option>
+       <option value="VIP">VIP</option>
+       <option value="NVIP">VVIP</option>
+      </select>
+      <label for="visitor_badge"> Badge </label>
+      </div>
+
+     <div class="input-field col s12">
+          <%= text_input f, :country, class: "materialize-input"%>
+          <label for="visitor_country">Country</label>
+          <%= error_tag f, :country %>
+      </div>
+
+      <div class="input-field col s12">
+          <%= text_input f, :city, class: "materialze-input" %>
+          <label for="visitor_city">City</label>
+          <%= error_tag f, :city %>
+      </div>
+
+    <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+              </div>
+      </div>
+    <% end %>

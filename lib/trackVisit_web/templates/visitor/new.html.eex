@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col s12 m6 l12">
+      <div id="basic-form" class="card card card-default scrollspy">
+        <div class="card-content">
+            <%= render "form.html", Map.put(assigns, :action, Routes.visitor_path(@conn, :create)) %>
+
+            <div class="input-field col s12">
+            <%= link "Back", to: Routes.visitor_path(@conn, :index) %></div>
+
+        </div>
+      </div> 
+    </div>
+ </div>      

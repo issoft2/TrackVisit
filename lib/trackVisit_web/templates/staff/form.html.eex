@@ -1,0 +1,83 @@
+       <h4 class="card-title">Staff Registration</h4>
+
+         <%=  form_for  @changeset, @action, fn f -> %>
+          <%= if @changeset.action do %>
+            <div class="alert alert-danger">
+              <p>Oops, something went wrong! Please check the errors below.</p>
+            </div>
+          <% end %>
+
+          <%= label f, :first_name %>
+          <%= text_input f, :first_name %>
+          <%= error_tag f, :first_name %>
+
+          <%= label f, :last_name %>
+          <%= text_input f, :last_name %>
+          <%= error_tag f, :last_name %>
+
+          <%= label f, :phone %>
+          <%= text_input f, :phone %>
+          <%= error_tag f, :phone %>
+
+          <%= label f, :email %>
+          <%= text_input f, :email %>
+          <%= error_tag f, :email %>
+
+          <%= label f, :security_id %>
+          <%= text_input f, :security_id %>
+          <%= error_tag f, :security_id %>
+
+          <%= label f, :city_state_residence %>
+          <%= text_input f, :city_state_residence %>
+          <%= error_tag f, :city_state_residence %>
+
+          <%= label f, :country_residence %>
+          <%= text_input f, :country_residence %>
+          <%= error_tag f, :country_residence %>
+
+          <%= label f, :city_state_origin %>
+          <%= text_input f, :city_state_origin %>
+          <%= error_tag f, :city_state_origin%>
+
+          <%= label f, :country_origin %>
+          <%= text_input f, :country_origin %>
+          <%= error_tag f, :country_origin %>
+
+          <%= label f, :residence_address %>
+          <%= text_input f, :residence_address %>
+          <%= error_tag f, :residence_address %>
+
+          <%= label f, :next_kin_name %>
+          <%= text_input f, :next_kin_name %>
+          <%= error_tag f, :next_kin_name %>
+
+          <%= label f, :next_phone %>
+          <%= text_input f, :next_phone %>
+          <%= error_tag f, :next_phone %>
+
+          <%= label f, :relationship %>
+          <%= text_input f, :relationship %>
+          <%= error_tag f, :relationship %>
+
+          <%= label f, :user? %>
+          <%= checkbox f, :user? %>
+          <%= error_tag f, :user? %>
+
+          <%= label f, :active? %>
+          <%= checkbox f, :active? %>
+          <%= error_tag f, :active? %>
+
+          <%= label f, :deactivated_by %>
+          <%= number_input f, :deactivated_by %>
+          <%= error_tag f, :deactivated_by %>
+
+          <div class="row">
+                    <div class="input-field col s12">
+                      <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                      </button>
+                  </div>
+          </div>
+        <% end %>
+     
+

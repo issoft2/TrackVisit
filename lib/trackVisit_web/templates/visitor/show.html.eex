@@ -1,0 +1,58 @@
+<h1>Show Visitor</h1>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @visitor.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @visitor.last_name %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @visitor.phone %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @visitor.email %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @visitor.address %>
+  </li>
+
+  <li>
+    <strong>Uid:</strong>
+    <%= @visitor.uid %>
+  </li>
+
+  <li>
+    <strong>Badge:</strong>
+    <%= @visitor.badge %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @visitor.country %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @visitor.city %>
+  </li>
+
+  <li>
+    <strong>Picture:</strong>
+    <%= @visitor.picture %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visitor_path(@conn, :edit, @visitor) %></span>
+<span><%= link "Back", to: Routes.visitor_path(@conn, :index) %></span>

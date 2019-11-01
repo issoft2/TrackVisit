@@ -1,0 +1,44 @@
+<h1>Listing Visitors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Uid</th>
+      <th>Badge</th>
+      <th>Country</th>
+      <th>City</th>
+      <th>Picture</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visitor <- @visitors do %>
+    <tr>
+      <td><%= visitor.first_name %></td>
+      <td><%= visitor.last_name %></td>
+      <td><%= visitor.phone %></td>
+      <td><%= visitor.email %></td>
+      <td><%= visitor.address %></td>
+      <td><%= visitor.uid %></td>
+      <td><%= visitor.badge %></td>
+      <td><%= visitor.country %></td>
+      <td><%= visitor.city %></td>
+      <td><%= visitor.picture %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.visitor_path(@conn, :show, visitor) %></span>
+        <span><%= link "Edit", to: Routes.visitor_path(@conn, :edit, visitor) %></span>
+        <span><%= link "Delete", to: Routes.visitor_path(@conn, :delete, visitor), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visitor", to: Routes.visitor_path(@conn, :new) %></span>
