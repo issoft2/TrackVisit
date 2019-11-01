@@ -1,5 +1,6 @@
 # TrackVisit
 
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -23,3 +24,6 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * sudo npm i webpack-cli --unsafe-perm=true --allow-root --save
   * sudo npm i file-loader --unsafe-perm=true --allow-root --save
   * sudo npm i url-loader --unsafe-perm=true --allow-root --save
+
+Track Visit is an application being develop on elixir 1.9.0, phoenix 1.4.0, companies/organsiations can adapt to manage the visits of none staff memeber in the organisation. This is aim to provide security insight if need be.
+ origin/master
